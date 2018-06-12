@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/PhysicsTile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/PhysicTiles/Wood/elementWood054.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PhysicTiles/Wood/elementWood005.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PhysicTiles/Wood/elementWood043.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PhysicTiles/Stone/elementStone000.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PhysicTiles/Stone/elementStone006.png" type="Texture" id=6]
+[ext_resource path="res://Assets/PhysicTiles/Stone/elementStone044.png" type="Texture" id=7]
+[ext_resource path="res://Assets/PhysicTiles/Explosive/elementExplosive000.png" type="Texture" id=8]
+[ext_resource path="res://Assets/PhysicTiles/Explosive/elementExplosive006.png" type="Texture" id=9]
+[ext_resource path="res://Assets/PhysicTiles/Explosive/elementExplosive044.png" type="Texture" id=10]
+
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = PoolVector2Array( 0, -17.5, 35, 17, -35, 17 )
+
+[node name="Roof" type="RigidBody2D" index="0" groups=[
+"tile",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+type = 0
+wood_health = 100
+stone_health = 250
+wood1 = ExtResource( 2 )
+wood2 = ExtResource( 3 )
+wood3 = ExtResource( 4 )
+stone1 = ExtResource( 5 )
+stone2 = ExtResource( 6 )
+stone3 = ExtResource( 7 )
+explosive1 = ExtResource( 8 )
+explosive2 = ExtResource( 9 )
+explosive3 = ExtResource( 10 )
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+

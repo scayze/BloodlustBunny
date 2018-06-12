@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/PhysicsTile.gd" type="Script" id=1]
+[ext_resource path="res://Assets/PhysicTiles/Wood/elementWood010.png" type="Texture" id=2]
+[ext_resource path="res://Assets/PhysicTiles/Wood/elementWood013.png" type="Texture" id=3]
+[ext_resource path="res://Assets/PhysicTiles/Wood/elementWood045.png" type="Texture" id=4]
+[ext_resource path="res://Assets/PhysicTiles/Stone/elementStone011.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PhysicTiles/Stone/elementStone014.png" type="Texture" id=6]
+[ext_resource path="res://Assets/PhysicTiles/Stone/elementStone046.png" type="Texture" id=7]
+[ext_resource path="res://Assets/PhysicTiles/Explosive/elementExplosive011.png" type="Texture" id=8]
+[ext_resource path="res://Assets/PhysicTiles/Explosive/elementExplosive014.png" type="Texture" id=9]
+[ext_resource path="res://Assets/PhysicTiles/Explosive/elementExplosive049.png" type="Texture" id=10]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 17, 17 )
+
+[node name="Square1" type="RigidBody2D" index="0" groups=[
+"tile",
+]]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+linear_velocity = Vector2( 0, 0 )
+linear_damp = -1.0
+angular_velocity = 0.0
+angular_damp = -1.0
+script = ExtResource( 1 )
+type = 0
+wood_health = 100
+stone_health = 250
+wood1 = ExtResource( 2 )
+wood2 = ExtResource( 3 )
+wood3 = ExtResource( 4 )
+stone1 = ExtResource( 5 )
+stone2 = ExtResource( 6 )
+stone3 = ExtResource( 7 )
+explosive1 = ExtResource( 8 )
+explosive2 = ExtResource( 9 )
+explosive3 = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+

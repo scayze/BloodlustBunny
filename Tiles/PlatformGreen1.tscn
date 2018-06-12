@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Environment/ground_grass.png" type="Texture" id=1]
+
+
+[node name="PlatformGreen1" type="StaticBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 61, -16, -63, -16, -66, -14, -67, -11, -67, -5, -57, 16, 56, 12, 67, -5, 67, -12, 65, -14 )
+_sections_unfolded = [ "Visibility" ]
+
+
